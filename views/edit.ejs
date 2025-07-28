@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Book</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f9f9f9;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        h1 {
+            margin-bottom: 30px;
+        }
+        
+        form {
+            margin-right: 20px;
+            display: inline-block;
+            text-align: left;
+            background: #fff;
+            padding-left: 50px;
+            padding-right: 80px;
+            padding-top: 30px;
+            padding-bottom: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        label {
+            font-weight: bold;
+        }
+        
+        input[type="text"],
+        input[type="number"],
+        input[type="date"],
+        textarea {
+            width: 100%;
+            padding: 10px 15px;
+            margin: 5px 0 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            font-size: 16px;
+        }
+        
+        button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #ffcc00;
+            color: #000;
+            font-weight: bold;
+            border-radius: 25px;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        button:hover {
+            background-color: #e6b800;
+        }
+        
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            color: #000;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        input[type="file"]::file-selector-button {
+            padding: 10px 20px;
+            background-color: #ffcc00;
+            color: black;
+            border: none;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-right: 10px;
+        }
+        
+        input[type="file"]::file-selector-button:hover {
+            background-color: #e6b800;
+        }
+        
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+        }
+        
+        .main-wrapper {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Edit Book</h1>
+    <form action="/edit/<%= book.id %>" method="POST" enctype="multipart/form-data">
+        <label>Title:</label>
+        <br>
+        <input type="text" name="title" value="<%= book.title %>" required>
+        <br>
+        <br>
+        <label>Author:</label>
+        <br>
+        <input type="text" name="author" value="<%= book.author %>">
+        <br>
+        <br>
+        <label>Category:</label>
+        <br>
+        <select name="category" id="categorySelect" required onchange="toggleOtherCategoryInput()">
+            <option value="">Select Category</option>
+            <option value="Fiction" <%=book.category==='Fiction' ? 'selected' : '' %>>Fiction</option>
+            <option value="Non-Fiction" <%=book.category==='Non-Fiction' ? 'selected' : '' %>>Non-Fiction</option>
+            <option value="Biography" <%=book.category==='Biography' ? 'selected' : '' %>>Biography</option>
+            <option value="Science" <%=book.category==='Science' ? 'selected' : '' %>>Science</option>
+            <option value="History" <%=book.category==='History' ? 'selected' : '' %>>History</option>
+            <option value="Fantasy" <%=book.category==='Fantasy' ? 'selected' : '' %>>Fantasy</option>
+            <option value="Mystery" <%=book.category==='Mystery' ? 'selected' : '' %>>Mystery</option>
+            <option value="Self-Help" <%=book.category==='Self-Help' ? 'selected' : '' %>>Self-Help</option>
+            <option value="Romance" <%=book.category==='Romance' ? 'selected' : '' %>>Romance</option>
+            <option value="Other" <%=[ 'Fiction', 'Non-Fiction', 'Biography', 'Science', 'History', 'Fantasy', 'Mystery', 'Self-Help', 'Romance'].includes(book.category) ? '' : 'selected' %>>Other</option>
+        </select>
+        <br>
+        <div id="otherCategoryDiv" style="<%= ['Fiction','Non-Fiction','Biography','Science','History','Fantasy','Mystery','Self-Help','Romance'].includes(book.category) ? 'display:none;' : 'display:block;' %>">
+            <label>Specify Other Category:</label>
+            <br>
+            <input type="text" id="otherCategoryInput" name="category_other" value="<%= ['Fiction','Non-Fiction','Biography','Science','History','Fantasy','Mystery','Self-Help','Romance'].includes(book.category) ? '' : book.category %>" /> </div>
+        <br>
+        <label>Rating (0–10):</label>
+        <br>
+        <input type="number" name="rating" min="0" max="10" value="<%= book.rating %>">
+        <br>
+        <br>
+        <label>Notes:</label>
+        <br>
+        <textarea name="notes" rows="4" cols="30">
+            <%= book.notes %>
+        </textarea>
+        <br>
+        <br>
+        <label>Date Read:</label>
+        <br>
+        <input type="date" name="date_read" value="<%= book.date_read.toISOString().substring(0, 10) %>">
+        <br>
+        <br>
+        <label>Open Library Cover ID:</label>
+        <br>
+        <input type="text" name="cover_id" value="<%= book.cover_id %>">
+        <br>
+        <br>
+        <label>Or Upload New Cover Manually:</label>
+        <br>
+        <br>
+        <input type="file" name="cover_file" accept="image/*">
+        <br>
+        <br>
+        <button type="submit">Save Changes</button>
+    </form>
+    <br> <a href="/">← Back</a>
+    <script>
+        function toggleOtherCategoryInput() {
+            const select = document.getElementById("categorySelect");
+            const otherDiv = document.getElementById("otherCategoryDiv");
+            if (select.value === "Other") {
+                otherDiv.style.display = "block";
+            }
+            else {
+                otherDiv.style.display = "none";
+                document.getElementById("otherCategoryInput").value = '';
+            }
+        }
+    </script>
+    <%- include('partials/footer') %>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+    /* Optional, remove if you want no inner spacing */
+}
+
+.footer {
+    width: 100%;
+    text-align: center;
+    padding: 15px;
+    font-size: 18px;
+}
+
+input[type="number"],
+select {
+    margin-top: 5px;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    /* match the rounded corners */
+    font-size: 16px;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+select:focus,
+input[type="number"]:focus {
+    border-color: #999;
+    box-shadow: 0 0 0 3px rgba(100, 100, 100, 0.1);
+}
