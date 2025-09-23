@@ -4,17 +4,17 @@ A Node.js + Express 𝘄𝗲𝗯 𝗮𝗽𝗽𝗹𝗶𝗰𝗮𝘁𝗶𝗼𝗻 to
 
 # Features:
 
-✔️ Add, edit, delete, and view books with ratings, reviews, and categories.
+📚  Add, edit, delete, and view books with ratings, reviews, and categories.
 
-✔️ Search, sort, and filter books (by rating, category, or title).
+🔍  Search, sort, and filter books (by rating, category, or title).
 
-✔️ Upload cover images (Open Library API or manual upload).
+🖼️  Upload cover images (Open Library API or manual upload).
 
-✔️ Interactive, responsive UI with flip-card design.
+💡 Interactive, responsive UI with flip-card design.
 
-✔️ Pagination for smooth browsing of large collections.
+📑 Pagination for smooth browsing of large collections.
 
-✔️ Flash messages for action feedback.
+🔔  Flash messages for action feedback.
 
 # Technical Overview: (Behind the Scenes)
 
@@ -32,4 +32,4 @@ Session & Notifications: express-session, connect-flash
 
 # Link:
 https://book-tracker-j3fm.onrender.com/
-<img width="2879" height="1639" alt="1" src="https://github.com/user-attachments/assets/5e8d3968-32d4-4ebf-9bb5-98adceea1cea" />
+
