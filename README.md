@@ -1,6 +1,6 @@
 # Book-Tracker
 
-A Node.js + Express 𝘄𝗲𝗯 𝗮𝗽𝗽𝗹𝗶𝗰𝗮𝘁𝗶𝗼𝗻 to manage your reading list. Users can add, edit, delete, and view books with ratings, categories, and reviews. Features include search, sorting, filtering, pagination, and dynamic cover images (via Open Library API or manual upload). Built with PostgreSQL, EJS, and Multer for a **responsive**, **interactive** experience.
+A Node.js + Express **web application** to manage your reading list. Users can add, edit, delete, and view books with ratings, categories, and reviews. Features include search, sorting, filtering, pagination, and dynamic cover images (via Open Library API or manual upload). Built with PostgreSQL, EJS, and Multer for a **responsive**, **interactive** experience.
 
 # Features:
 
