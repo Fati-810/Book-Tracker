@@ -18,17 +18,17 @@ A Node.js + Express **web application** to manage your reading list. Users can a
 
 # Technical Overview: (Behind the Scenes)
 
-Backend: Node.js, Express.js
+Backend: Node.js, Express.js.
 
-Frontend: EJS (Embedded JavaScript Templates), CSS
+Frontend: EJS (Embedded JavaScript Templates), CSS.
 
 Database: PostgreSQL
 
-File Uploads: Multer (for image upload and storage)
+File Uploads: Multer (for image upload and storage).
 
-External API: Open Library API (for book cover images)
+External API: Open Library API (for book cover images).
 
-Session & Notifications: express-session, connect-flash
+Session & Notifications: express-session, connect-flash.
 
 # Link:
 https://book-tracker-j3fm.onrender.com/
