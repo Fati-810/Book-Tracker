@@ -2,7 +2,7 @@
 
 A Node.js + Express **web application** to manage your reading list. Users can add, edit, delete, and view books with ratings, categories, and reviews. Features include search, sorting, filtering, pagination, and dynamic cover images (via Open Library API or manual upload). Built with PostgreSQL, EJS, and Multer for a **responsive**, **interactive** experience.
 
-# Features:
+## Features:
 
 📚  Add, edit, delete, and view books with ratings, reviews, and categories.
 
@@ -16,7 +16,7 @@ A Node.js + Express **web application** to manage your reading list. Users can a
 
 🔔  Flash messages for action feedback.
 
-# Technical Overview: (Behind the Scenes)
+## Technical Overview: (Behind the Scenes)
 
 Backend: Node.js, Express.js.
 
@@ -30,6 +30,16 @@ External API: Open Library API (for book cover images).
 
 Session & Notifications: express-session, connect-flash.
 
-# Link:
+## Preview:
 https://book-tracker-j3fm.onrender.com/
+
+## Contact:
+If you'd like to see more of my work, connect with me through my portfolio:
+
+Developer: Fatimah Ali
+Website: fatimahdigitaledge.com
+GitHub: github.com/fati-810
+
+## License:
+This project is for educational and portfolio purposes.
 
