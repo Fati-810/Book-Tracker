@@ -22,7 +22,7 @@ Backend: Node.js, Express.js.
 
 Frontend: EJS (Embedded JavaScript Templates), CSS.
 
-Database: PostgreSQL
+Database: PostgreSQL.
 
 File Uploads: Multer (for image upload and storage).
 
