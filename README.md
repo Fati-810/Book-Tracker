@@ -31,7 +31,7 @@ External API: Open Library API (for book cover images).
 Session & Notifications: express-session, connect-flash.
 
 ## Preview:
-[https://book-tracker-j3fm.onrender.com/](https://fatimahdigitaledge.com/portfolio-item/book-tracker-web-application-development/#inside-the-application)
+https://fatimahdigitaledge.com/portfolio-item/book-tracker-web-application-development/#inside-the-application
 
 ## Contact:
 If you'd like to see more of my work, connect with me through my portfolio:
